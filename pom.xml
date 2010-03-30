@@ -150,4 +150,11 @@
             
 		</plugins>
 	</build>
+    
+    <scm>
+    	<connection>scm:git:git://github.com/olivergierke/spring-rest.git</connection>
+    	<developerConnection>scm:git:git@github.com:olivergierke/spring-rest.git</developerConnection>
+    	<url>http://github.com/olivergierke/spring-rest</url>
+    </scm>
+    
 </project>
