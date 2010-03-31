@@ -64,7 +64,7 @@ class CustomerRestController {
 
     @RequestMapping(value = "/{id}", method = GET)
     @ResponseBody
-    public Customer showCustomer(@PathVariable CustomerNumber id, Model model) {
+    public Customer showCustomer(@PathVariable CustomerNumber id) {
 
         return repository.findBy(id);
     }
