@@ -84,7 +84,7 @@
 			<version>3.1.0</version>
 			<scope>runtime</scope>
 		</dependency>
-
+        
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -110,6 +110,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>0.9.2</version>
 		</dependency>
 	</dependencies>
     
@@ -156,5 +161,12 @@
     	<developerConnection>scm:git:git@github.com:olivergierke/spring-rest.git</developerConnection>
     	<url>http://github.com/olivergierke/spring-rest</url>
     </scm>
+    
+    <repositories>
+        <repository>
+            <id>projectlombok.org</id>
+            <url>http://projectlombok.org/mavenrepo</url>
+        </repository>
+    </repositories> 
     
 </project>
