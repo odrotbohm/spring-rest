@@ -71,6 +71,7 @@ class CustomerRestController {
 
 
     @RequestMapping(value = "/{id}", method = PUT)
+    @ResponseStatus(OK)
     public void updateCustomer(@Valid Customer customer) {
 
         repository.save(customer);
