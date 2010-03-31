@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author Oliver Gierke
  */
-interface CustomerRepository {
+public interface CustomerRepository {
 
     /**
      * Finds a single {@link Customer}.
