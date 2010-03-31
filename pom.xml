@@ -195,7 +195,20 @@
     <repositories>
         <repository>
             <id>projectlombok.org</id>
+            <name>Lombok repository</name>
             <url>http://projectlombok.org/mavenrepo</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        
+        <repository>
+            <id>org.jboss.repository</id>
+            <name>JBoss Maven Repository</name>         
+            <url>http://repository.jboss.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories> 
     
