@@ -62,4 +62,13 @@ class CustomerController {
 
         return "redirect:/customers";
     }
+
+
+    @RequestMapping(value = "/{id}", method = DELETE)
+    public String deleteCustomer(@PathVariable CustomerNumber id) {
+
+        repository.delete(id);
+
+        return "redirect:/customers";
+    }
 }
