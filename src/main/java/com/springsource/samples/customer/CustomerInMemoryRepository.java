@@ -19,14 +19,11 @@ class CustomerInMemoryRepository implements CustomerRepository {
 
     public CustomerInMemoryRepository() {
 
-        customers.add(new Customer(new CustomerNumber("ABC1234"), "Dave",
-                "Matthews"));
-        customers.add(new Customer(new CustomerNumber("ABC1235"), "Carter",
-                "Beauford"));
-        customers.add(new Customer(new CustomerNumber("ABC1236"), "Tim",
-                "Rexnolds"));
-        customers.add(new Customer(new CustomerNumber("ABC1237"), "Jeff",
-                "Coffin"));
+        customers.add(new Customer(CustomerNumber.next(), "Dave", "Matthews"));
+        customers
+                .add(new Customer(CustomerNumber.next(), "Carter", "Beauford"));
+        customers.add(new Customer(CustomerNumber.next(), "Tim", "Rexnolds"));
+        customers.add(new Customer(CustomerNumber.next(), "Jeff", "Coffin"));
     }
 
 
@@ -67,6 +64,8 @@ class CustomerInMemoryRepository implements CustomerRepository {
         Assert.notNull(customer);
 
         if (customer.isNew()) {
+
+            customer.setNumber(CustomerNumber.next());
             customers.add(customer);
         } else {
 
