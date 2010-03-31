@@ -76,4 +76,12 @@ class CustomerRestController {
 
         repository.save(customer);
     }
+
+
+    @RequestMapping(value = "/{id}", method = DELETE)
+    @ResponseStatus(OK)
+    public void deleteCustomer(@PathVariable CustomerNumber id) {
+
+        repository.delete(id);
+    }
 }
