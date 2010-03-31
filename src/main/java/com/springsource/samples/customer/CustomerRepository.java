@@ -31,4 +31,12 @@ public interface CustomerRepository {
      * @param customer
      */
     public void save(Customer customer);
+
+
+    /**
+     * Deletes the {@link Customer} with the given number.
+     * 
+     * @param number
+     */
+    public void delete(CustomerNumber number);
 }

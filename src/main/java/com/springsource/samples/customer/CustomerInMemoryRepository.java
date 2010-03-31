@@ -51,13 +51,6 @@ class CustomerInMemoryRepository implements CustomerRepository {
     }
 
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * com.springsource.samples.customer.CustomerRepository#save(com.springsource
-     * .samples.customer.Customer)
-     */
     @Override
     public void save(Customer customer) {
 
@@ -73,6 +66,17 @@ class CustomerInMemoryRepository implements CustomerRepository {
 
             original.setFirstname(customer.getFirstname());
             original.setLastname(customer.getLastname());
+        }
+    }
+
+
+    @Override
+    public void delete(CustomerNumber number) {
+
+        Customer customer = findBy(number);
+
+        if (customer != null) {
+            customers.remove(customer);
         }
     }
 }
