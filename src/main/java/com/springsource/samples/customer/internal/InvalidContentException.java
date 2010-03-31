@@ -10,4 +10,5 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class InvalidContentException extends RuntimeException {
 
+    private static final long serialVersionUID = 2620685905341304380L;
 }
