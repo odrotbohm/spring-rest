@@ -2,8 +2,6 @@ package com.springsource.samples.customer;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +39,7 @@ class CustomerController {
 
 
     @RequestMapping(method = POST)
-    public String createCustomer(@Valid @ModelAttribute Customer customer) {
+    public String createCustomer(@ModelAttribute Customer customer) {
 
         repository.save(customer);
 
@@ -58,7 +56,7 @@ class CustomerController {
 
 
     @RequestMapping(value = "/{id}", method = PUT)
-    public String updateCustomer(@Valid @ModelAttribute Customer customer) {
+    public String updateCustomer(@ModelAttribute Customer customer) {
 
         repository.save(customer);
 
