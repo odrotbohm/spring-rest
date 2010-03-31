@@ -1,5 +1,7 @@
 package com.springsource.samples.customer;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import lombok.Data;
 
 
@@ -9,6 +11,7 @@ import lombok.Data;
  * @author Oliver Gierke - gierke@synyx.de
  */
 @Data
+@XmlRootElement
 public class Customer {
 
     private CustomerNumber number;

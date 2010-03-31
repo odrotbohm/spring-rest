@@ -2,7 +2,12 @@ package com.springsource.samples.customer;
 
 import java.util.UUID;
 
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import lombok.Data;
+
+import com.springsource.samples.customer.internal.CustomerNumberTypeAdapter;
 
 
 /**
@@ -11,6 +16,8 @@ import lombok.Data;
  * @author Oliver Gierke
  */
 @Data
+@XmlType
+@XmlJavaTypeAdapter(CustomerNumberTypeAdapter.class)
 public class CustomerNumber {
 
     private final String number;
