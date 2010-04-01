@@ -4,19 +4,16 @@ import static org.springframework.http.HttpStatus.*;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.Assert;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
-import com.springsource.samples.customer.internal.InvalidContentException;
 
 
 /**
@@ -49,12 +46,8 @@ class CustomerRestController {
 
     @RequestMapping(method = POST)
     @ResponseStatus(CREATED)
-    public void createCustomer(@Valid Customer customer, BindingResult result,
+    public void createCustomer(@RequestBody Customer customer,
             HttpServletResponse response) {
-
-        if (result.hasErrors()) {
-            throw new InvalidContentException();
-        }
 
         repository.save(customer);
         response.setHeader("Location", String.format("/rest/customers/%s",
@@ -72,7 +65,7 @@ class CustomerRestController {
 
     @RequestMapping(value = "/{id}", method = PUT)
     @ResponseStatus(OK)
-    public void updateCustomer(@Valid Customer customer) {
+    public void updateCustomer(@RequestBody Customer customer) {
 
         repository.save(customer);
     }
